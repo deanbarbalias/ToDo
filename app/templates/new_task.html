@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class='form-group container'>
+        <h3 class="mb-3 mt-2 border-bottom">Add a New Task to the ToDo List</h3>
+        <form action="{{url_for('new_task')}}" method="POST">
+            {{ form.hidden_tag() }}
+            <strong><p>{{ form.title.label(class="form-control-label") }}:</p></strong>
+            <p>{{ form.title(class="form-control form-control-large ") }}</p>
+            <strong><p>{{ form.category.label(class="form-control-label") }}:</p></strong>
+            <p>{{ form.category(class="form-control form-control-large ") }}</p>
+            <strong><p>{{ form.task.label(class="form-control-label") }}</p></strong>
+            <p>{{ form.task(class="form-control form-control-large ") }}</p>
+            <p>{{ form.submit(class="btn btn-outline-info") }}</p>
+        </form>
+    </div>
+{% endblock content %}
